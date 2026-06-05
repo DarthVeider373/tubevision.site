@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noimageindex, nosnippet">
+  <title>Desatadora de Nós</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,700;0,800;1,700;1,800&family=Raleway:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --cor-fundo: linear-gradient(180deg, #f8f3ea 0%, #efe2cc 100%);
+      --cor-header: #ffffff;
+      --cor-dourado: #c8a45d;
+      --cor-dourado-claro: #e6c98d;
+      --cor-texto: #4f3b2b;
+      --cor-destaque: #9c1f1f;
+      --cor-card: #ffffff;
+      --cor-botao: linear-gradient(135deg, #c8a45d, #d8b874, #e6c98d);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      min-height: 100vh;
+      background: var(--cor-fundo);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 32px 16px 48px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 22px;
+      overflow: hidden;
+      background: var(--cor-card);
+      border: 1px solid rgba(200, 164, 93, 0.25);
+      box-shadow:
+        0 18px 45px rgba(80, 50, 20, 0.12),
+        0 0 0 1px rgba(200, 164, 93, 0.12);
+    }
+
+    .header {
+      background: var(--cor-header);
+      padding: 15px 20px 16px;
+      text-align: center;
+      border-bottom: 1px solid rgba(200, 164, 93, 0.25);
+    }
+
+    .header-text {
+      color: var(--cor-dourado);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 3.8px;
+      text-transform: uppercase;
+    }
+
+    .img-wrap {
+      position: relative;
+      width: 100%;
+      background: #f4ead8;
+      overflow: hidden;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .img-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 90px;
+      background: linear-gradient(transparent, #ffffff);
+    }
+
+    .divider-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 28px 0;
+      background: #ffffff;
+    }
+
+    .divider-line {
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--cor-dourado));
+    }
+
+    .divider-line.right {
+      background: linear-gradient(90deg, var(--cor-dourado), transparent);
+    }
+
+    .divider-icon {
+      color: var(--cor-dourado);
+      font-size: 17px;
+    }
+
+    .content {
+      padding: 20px 24px 34px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+      background: #ffffff;
+    }
+
+    .headline {
+      font-family: 'EB Garamond', serif;
+      font-size: clamp(30px, 8vw, 40px);
+      font-weight: 800;
+      color: var(--cor-texto);
+      text-align: center;
+      line-height: 1.18;
+    }
+
+    .headline em {
+      font-style: italic;
+      color: var(--cor-destaque);
+    }
+
+    .subtext {
+      font-size: 12px;
+      font-weight: 800;
+      color: #9b7b50;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .cta-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 17px 20px;
+      background: var(--cor-botao);
+      color: #ffffff;
+      font-family: 'Raleway', sans-serif;
+      font-size: 17px;
+      font-weight: 900;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 8px 26px rgba(200, 164, 93, 0.42);
+      transition: transform 0.15s, box-shadow 0.15s;
+      animation: glowGold 2.4s ease-in-out infinite;
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(200, 164, 93, 0.58);
+    }
+
+    .cta-btn:active {
+      transform: translateY(0);
+    }
+
+    @keyframes glowGold {
+
+      0%,
+      100% {
+        box-shadow: 0 8px 26px rgba(200, 164, 93, 0.38);
+      }
+
+      50% {
+        box-shadow: 0 8px 40px rgba(200, 164, 93, 0.72);
+      }
+    }
+
+    .trust {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #9b7b50;
+    }
+
+    footer {
+      margin-top: 28px;
+      text-align: center;
+      color: rgba(79, 59, 43, 0.58);
+      font-size: 11px;
+      line-height: 2;
+    }
+
+    footer a {
+      color: rgba(79, 59, 43, 0.78);
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    (function (w, d) {
+      w.googlePixelId = "6a08f04f5b5c4ce4887ab26b";
+      var pixel = d.createElement("script");
+      pixel.async = true;
+      pixel.defer = true;
+      pixel.src = "https://cdn.utmify.com.br/scripts/pixel/pixel-google.js";
+      d.head.appendChild(pixel);
+    })(window, document);
+  </script>
+
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+</head>
+
+<body>
+  <div class="card">
+    <div class="header">
+      <p class="header-text">✝ Desatadora de Nós ✝</p>
+    </div>
+
+    <div class="img-wrap">
+      <img src="./image/des1.png" alt="Desatadora de Nós" class="hero-img">
+      <div class="img-overlay"></div>
+    </div>
+
+    <div class="divider-wrap">
+      <div class="divider-line"></div>
+      <span class="divider-icon">✝</span>
+      <div class="divider-line right"></div>
+    </div>
+
+    <div class="content">
+      <h1 class="headline">
+        Ela desata os nós que<br><em>você já não consegue<br>desatar sozinho</em>
+      </h1>
+
+      <p class="subtext">Ouça a oração das 7 palavras</p>
+
+      <a href="../Iouvor-do-sucesso" class="cta-btn" id="cta-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+          <path d="M6.271 5.055a.5.5 0 0 1 .52.038l3.5 2.5a.5.5 0 0 1 0 .814l-3.5 2.5A.5.5 0 0 1 6 10.5v-5a.5.5 0 0 1 .271-.445z"></path>
+        </svg>
+        Ouvir a Oração Agora
+      </a>
+
+      <div class="trust">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="#a08060" viewBox="0 0 16 16">
+          <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2zm3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2z"></path>
+        </svg>
+        100% gratuito · acesso imediato
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    © 2026 Desatadora de Nós. Todos os direitos reservados.<br>
+    <a href="termos.html">Termos de Uso</a> &nbsp;·&nbsp; <a href="privacidade.html">Política de Privacidade</a>
+  </footer>
+
+  <script>
+    (function () {
+      var params = window.location.search;
+      if (!params) return;
+
+      var btn = document.getElementById("cta-btn");
+      if (!btn) return;
+
+      var base = btn.href;
+      var joiner = base.indexOf("?") !== -1 ? "&" : "?";
+      btn.href = base + joiner + params.slice(1);
+    })();
+  </script>
+</body>
+
+</html>
